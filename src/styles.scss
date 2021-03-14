@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --x-primary: #ff3333;
+  --x-black: #111;
+  --x-white: #fff;
+  --x-text: #fafafa;
+  --x-text-muted: #9c9c9c;
+  --x-border: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--x-black);
+  color: var(--x-text);
+}
+
+.container-content {
+  max-width: 1200px;
+  margin: auto;
+}

@@ -1,0 +1,43 @@
+.header {
+  background-color: var(--x-black);
+  height: auto;
+  border-bottom: 1px solid var(--x-border);
+  &__menu {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    .logo {
+      width: 40px;
+      height: 40px;
+      display: block;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      img {
+        width: 100%;
+      }
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      &-item {
+        padding: 5px;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        color: var(--x-text-muted);
+        outline: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+          color: var(--x-white);
+        }
+      }
+      .active {
+        color: var(--x-primary);
+      }
+    }
+  }
+}

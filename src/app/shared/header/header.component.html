@@ -1,0 +1,16 @@
+<header class="header">
+  <div class="header__menu container-content">
+    <picture [routerLink]="['/']" class="logo">
+      <img src="/assets/logo.svg" alt="">
+    </picture>
+    <nav class="nav">
+      <div [routerLink]="['/anime']"
+           class="nav-item"
+           [routerLinkActiveOptions]="{ exact: true }"
+           routerLinkActive="active">Anime</div>
+      <div class="nav-item">Manga</div>
+      <div class="nav-item">Characters</div>
+      <div class="nav-item">Seasons</div>
+    </nav>
+  </div>
+</header>
