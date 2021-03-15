@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MENU } from '../../../core/constants';
+import { Page } from '../../../interfaces/page';
 
 @Component({
   selector: 'app-anime',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnimeComponent implements OnInit {
 
-  constructor() { }
+  animeSubmenu!: Page[];
+
+  constructor() {
+    this.animeSubmenu = MENU.filter(page => page.title.toLowerCase() === 'anime')
+   }
 
   ngOnInit(): void {
+    console.log(this.animeSubmenu)
   }
 
 }

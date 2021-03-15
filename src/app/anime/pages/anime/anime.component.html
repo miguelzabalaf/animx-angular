@@ -1,10 +1,36 @@
-<section class="container-content">
+<div class="container-content">
 
   <div class="anime">
 
-    <div class="anime__hero">
+    <section class="anime__hero">
+      <picture class="anime__hero--item">
+        <img src="" alt="">
+      </picture>
+      <picture class="anime__hero--item">
+        <img src="" alt="">
+      </picture>
+      <picture class="anime__hero--item">
+        <img src="" alt="">
+      </picture>
+      <picture class="anime__hero--item">
+        <img src="" alt="">
+      </picture>
+    </section>
 
-    </div>
+    <section class="anime__nav">
+      <nav class="nav">
+        <div *ngFor="let item of animeSubmenu[0].subpages"
+             [routerLink]="[item.url]"
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="{ exact: true }"
+             class="nav__item">
+          <span>{{ item.title }}</span>
+        </div>
+      </nav>
+    </section>
+
+    <router-outlet></router-outlet>
 
   </div>
-</section>
+
+</div>
