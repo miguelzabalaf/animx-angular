@@ -1,0 +1,11 @@
+<div class="airing-list__anime">
+  <picture class="anime-img">
+    <img [src]="anime.image_url" alt="">
+  </picture>
+  <div class="anime-details">
+    <p class="anime-details__title">{{ anime.title }}</p>
+    <div class="anime-details__on-air" *ngIf="anime.start_date">
+      <span>{{  navigationType === 'upcoming' ? 'Upcoming: ' + anime.start_date : anime.start_date }}</span>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-export interface TopAiring {
+export interface TopAiringAndUpcoming {
   mal_id:     number;
   rank:       number;
   title:      string;

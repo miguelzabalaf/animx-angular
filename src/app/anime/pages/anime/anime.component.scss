@@ -74,3 +74,17 @@
     }
   }
 }
+
+@media screen and (max-width: 425px) {
+  .anime {
+    &__nav {
+      .nav {
+        &__item {
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
