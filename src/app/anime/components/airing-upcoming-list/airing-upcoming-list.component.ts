@@ -44,4 +44,8 @@ export class AiringUpcomingListComponent implements OnInit {
     });
   }
 
+  getTop(): TopAiringAndUpcoming[] {
+    return ( this.navigationType === 'airing' ? this.topAiring : this.topUpcoming )
+  }
+
 }
