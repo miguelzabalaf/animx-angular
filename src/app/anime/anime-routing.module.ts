@@ -10,7 +10,7 @@ const routes: Routes = [
     component: AnimeComponent,
     children: [
       {
-        path: '',
+        path: 'airing',
         component: AiringUpcomingListComponent,
         data: { navigationType: 'airing' }
       },
@@ -26,7 +26,7 @@ const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: ''
+        redirectTo: 'airing'
       }
     ]
 

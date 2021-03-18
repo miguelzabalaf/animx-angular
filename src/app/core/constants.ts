@@ -9,7 +9,7 @@ export const MENU: Page[] = [
       {
         title: "Airing",
         desc: "Find out about the animes that are being broadcast",
-        url: "/anime"
+        url: "/anime/airing"
       },
       {
         title: "Upcoming",

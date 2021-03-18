@@ -26,7 +26,6 @@ export class AiringUpcomingListComponent implements OnInit {
   getNavigationType(): void {
     this.activateRoute.data.subscribe( ({ navigationType }) => {
       this.navigationType = navigationType;
-      console.log(this.navigationType)
       this.getAiringOrUpcoming();
     });
   }

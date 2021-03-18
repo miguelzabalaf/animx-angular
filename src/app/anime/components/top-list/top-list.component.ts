@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AnimeService } from '../../../services/anime.service';
+import { TopAnime } from '../../../interfaces/top-anime-response';
 
 @Component({
   selector: 'app-top-list',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopListComponent implements OnInit {
 
-  constructor() { }
+  public topAnimes: TopAnime[] = [];
+
+  constructor( private animeService: AnimeService ) { }
 
   ngOnInit(): void {
+    this.getTopAnimes();
+  }
+
+  getTopAnimes(): void {
+    this.animeService.getTop50OfAnime().subscribe( data => {
+      this.topAnimes = data;
+    } )
   }
 
 }

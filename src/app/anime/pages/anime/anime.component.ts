@@ -16,7 +16,6 @@ export class AnimeComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log(this.animeSubmenu)
   }
 
 }
