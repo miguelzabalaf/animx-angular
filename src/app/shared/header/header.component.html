@@ -7,8 +7,30 @@
       <div *ngFor="let item of menu"
            [routerLink]="[item.url]"
            class="nav-item"
+           (mouseover)="itemMenuHover(item)"
+           (click)="subHeaderIsVisible = false"
            [routerLinkActiveOptions]="{ exact: false }"
            routerLinkActive="active">{{ item.title }}</div>
     </nav>
+  </div>
+  <div *ngIf="subHeaderIsVisible"
+       class="header__submenu navigation-fluid"
+       (mouseover)="subHeaderHover()"
+       (mouseleave)=" subHeaderLeave()">
+    <div class="header__submenu--container"
+         *ngFor="let subpage of actualSubPages"
+         [routerLink]="[subpage.url]"
+         routerLinkActive="subpage-active"
+         [routerLinkActiveOptions]="{ exact: false }">
+      <!-- {{ subpage.title }} -->
+      <picture class="img">
+        <img [src]="subpage.url_img" [alt]="subpage.title">
+      </picture>
+      <div class="description">
+        <p class="title">{{ subpage.title }}</p> <br>
+        <small class="desc">{{ subpage.desc }}</small>
+      </div>
+    </div>
+
   </div>
 </header>
