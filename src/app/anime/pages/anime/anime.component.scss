@@ -40,10 +40,10 @@
   // NAV
   &__nav {
     position: sticky;
-    top: 0;
+    top: 61px;
     right: 0;
     left: 0;
-    z-index: 10;
+    z-index: 1;
     background-color: var(--x-black);
     .nav {
       display: flex;
