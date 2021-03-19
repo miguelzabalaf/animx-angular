@@ -109,3 +109,10 @@
     }
   }
 }
+
+.header-transparent {
+  transition: all 0.5s;
+  background-color: transparent;
+  height: auto;
+  border-bottom: 1px solid transparent;
+}

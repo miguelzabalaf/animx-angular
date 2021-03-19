@@ -6,20 +6,21 @@
   bottom: 0;
   display: flex;
   justify-content: flex-end;
-  &::before {
-    content: '';
+  &__cap {
     position: absolute;
     right: 0;
     left: 0;
     top: 0;
     bottom: 0;
     z-index: 2;
-    background: linear-gradient(90deg, #111111 0%, rgba(17, 17, 17, 0.5) 100%);  }
+    background: linear-gradient(90deg, #111111 0%, rgba(17, 17, 17, 0.5) 100%);
+  }
     video {
     width: 100%;
     height: 100%;
     text-align: end;
     object-fit: cover;
+    filter: blur(5px);
   }
   &__content {
     position: absolute;
@@ -30,6 +31,7 @@
     max-width: 1200px;
     margin: auto;
     z-index: 3;
+    padding: 10px;
     .info {
       position: absolute;
       padding-top: 61px;
@@ -60,4 +62,21 @@
       }
     }
   }
+}
+
+
+
+.cap__transparent {
+  transition: all 1s;
+  background: rgba($color: #000000, $alpha: 0.0);
+}
+
+.hero__content__transparent {
+  transition: all 1s;
+  opacity: 0;
+}
+
+.no-blur {
+  transition: all 0.3s;
+  filter: blur(0px) !important;
 }

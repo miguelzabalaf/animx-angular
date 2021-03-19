@@ -1,11 +1,12 @@
-<div class="hero">
-  <video [muted]="'muted'" src="assets/animx.mp4" autoplay loop="loop"></video>
-  <div class="hero__content">
+<div class="hero navigation-fluid">
+  <div class="hero__cap" [ngClass]="{'cap__transparent': !isMuted}"></div>
+  <video [muted]="stateMuted" src="assets/animx.mp4" autoplay loop="loop" [ngClass]="{'no-blur': !isMuted}"></video>
+  <div class="hero__content" [ngClass]="{'hero__content__transparent': !isMuted}">
     <div class="info">
       <img src="assets/animx-logo.png" alt="">
       <p class="description">Welcome to AnimX, all the information found on this page is thanks to the My Anime List
         public API, developed by Miguel Zabala F in Angular Framework (v.11).</p>
-      <button class="watch-video">Watch Video</button>
+      <button class="watch-video" (click)="watchVideo()">Watch Video</button>
     </div>
   </div>
 </div>
