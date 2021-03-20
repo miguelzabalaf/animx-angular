@@ -1,6 +1,7 @@
 <div class="hero navigation-fluid">
   <div class="hero__cap" [ngClass]="{'cap__transparent': !isMuted}"></div>
   <video [muted]="stateMuted" src="assets/animx.mp4" autoplay loop="loop" [ngClass]="{'no-blur': !isMuted}"></video>
+  <div class="insivible-action" *ngIf="!isMuted" (click)="muteVideo()"></div>
   <div class="hero__content" [ngClass]="{'hero__content__transparent': !isMuted}">
     <div class="info">
       <img src="assets/animx-logo.png" alt="">
