@@ -9,9 +9,10 @@
   z-index: 10;
   position: sticky;
   &__menu {
-    padding: 10px;
+    padding: 10px 15px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     .logo {
       width: 40px;
       height: 40px;
@@ -44,6 +45,9 @@
       .active {
         color: var(--x-primary);
       }
+    }
+    .menu-mobile {
+      border: 1px solid red;
     }
   }
 
@@ -116,3 +120,31 @@
   height: auto;
   border-bottom: 1px solid transparent;
 }
+
+
+@media screen and (max-width: 768px) {
+  .header {
+    &__menu {
+      .nav {
+        display: none;
+      }
+      .menu-mobile {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 10px 10px;
+        border: none;
+        .line {
+          border: 1px solid var(--x-text-muted);
+        }
+        &:hover {
+          background-color: rgba($color: #ffffff, $alpha: 0.1);
+        }
+      }
+    }
+  }
+}
+

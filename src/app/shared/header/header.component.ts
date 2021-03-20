@@ -31,8 +31,12 @@ export class HeaderComponent implements OnInit {
     if (item.subpages) {
       this.actualSubPages = item.subpages;
       this.subHeaderIsVisible = true;
-      this.headerService.silence();
+      this.onVideoSilence();
     }
+  }
+
+  onVideoSilence(): void {
+    this.headerService.silence();
   }
 
   itemMenuLeave(): void {

@@ -8,6 +8,9 @@
         (click)="subHeaderIsVisible = false" [routerLinkActiveOptions]="{ exact: false }" routerLinkActive="active">{{
         item.title }}</div>
     </nav>
+    <div class="menu-mobile" (click)="onVideoSilence()">
+      <div class="line" *ngFor="let item of [].constructor(3)"></div>
+    </div>
   </div>
   <div *ngIf="subHeaderIsVisible" class="header__submenu navigation-fluid" (mouseover)="subHeaderHover()"
     (mouseleave)=" subHeaderLeave()">
