@@ -1,0 +1,56 @@
+.top-anime {
+  background-color: var(--x-black-lite);
+  display: flex;
+  flex: 1;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  &__image {
+    height: 100px;
+    width: 75px;
+    flex-shrink: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__info {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    &--title {
+      font-size: 14px;
+      color: var(--x-text);
+      margin: 0;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      text-align: start;
+    }
+    &--date {
+      font-size: 11px;
+      color: var(--x-text-muted);
+    }
+    &--details {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      .type {
+        background-color: var(--x-primary);
+        color: var(--x-text);
+        padding: 1.5px 3px;
+        border-radius: 3px;
+        font-size: 10px;
+      }
+      .episodes {
+        font-size: 11px;
+        color: var(--x-text-muted);
+      }
+    }
+  }
+}

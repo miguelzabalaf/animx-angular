@@ -6,6 +6,7 @@ import { AnimeComponent } from './pages/anime/anime.component';
 import { TopListComponent } from './components/top-list/top-list.component';
 import { AiringUpcomingListComponent } from './components/airing-upcoming-list/airing-upcoming-list.component';
 import { AiringUpcomingListItemComponent } from './components/airing-upcoming-list-item/airing-upcoming-list-item.component';
+import { TopListItemComponent } from './components/top-list-item/top-list-item.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { AiringUpcomingListItemComponent } from './components/airing-upcoming-li
     TopListComponent,
     AiringUpcomingListComponent,
     AiringUpcomingListItemComponent,
+    TopListItemComponent,
   ],
   imports: [
     CommonModule,

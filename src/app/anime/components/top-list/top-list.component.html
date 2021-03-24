@@ -1,13 +1,3 @@
 <section class="top-anime-list navigation-fluid">
-  <div *ngFor="let anime of topAnimes">
-
-    <div class="top-anime">
-      <picture class="top-anime__image">
-        <img [src]="anime.image_url" [alt]="anime.title">
-      </picture>
-    </div>
-
-  </div>
+  <app-top-list-item [anime]="anime" *ngFor="let anime of topAnimes"></app-top-list-item>
 </section>
-
-

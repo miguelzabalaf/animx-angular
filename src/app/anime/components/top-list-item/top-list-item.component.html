@@ -1,0 +1,13 @@
+<div class="top-anime">
+  <picture class="top-anime__image">
+    <img [src]="anime.image_url" [alt]="anime.title">
+  </picture>
+  <div class="top-anime__info">
+    <p class="top-anime__info--title" [title]="anime.title">{{ anime.title }}</p>
+    <small class="top-anime__info--date">{{ anime.start_date }} - {{ anime.end_date }}</small>
+    <div class="top-anime__info--details">
+      <small class="type">{{ anime.type }}</small>
+      <small class="episodes">{{ anime.episodes }} Episodes</small>
+    </div>
+  </div>
+</div>
