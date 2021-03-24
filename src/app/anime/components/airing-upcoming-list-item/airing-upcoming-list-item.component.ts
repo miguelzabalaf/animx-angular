@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TopAiringAndUpcoming } from '../../../interfaces/top-airing-and-upcoming';
 
 @Component({
@@ -13,16 +13,18 @@ export class AiringUpcomingListItemComponent implements OnInit {
 
   @Input() anime!: TopAiringAndUpcoming;
 
-  constructor( private activateRoute: ActivatedRoute ) { }
+  constructor(
+    private activateRoute: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.getNavigationType();
   }
 
   getNavigationType(): void {
-    this.activateRoute.data.subscribe( ({ navigationType }) => {
+    this.activateRoute.data.subscribe(({ navigationType }) => {
       this.navigationType = navigationType;
-    } )
+    })
   }
 
 }

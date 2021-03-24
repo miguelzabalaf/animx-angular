@@ -1,4 +1,4 @@
-<div class="top-anime">
+<div class="top-anime" [routerLink]="['/anime', anime.mal_id]">
   <picture class="top-anime__image">
     <img [src]="anime.image_url" [alt]="anime.title">
   </picture>

@@ -1,0 +1,35 @@
+.anime-details {
+  position: absolute;
+  top: 61px;
+  left: 0px;
+  right: 0px;
+  z-index: -1;
+  &__hero {
+    width: 100%;
+    height: 175px;
+    background-color: var(--x-border);
+    position: relative;
+    &--baner {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: block;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: blur(5px);
+      }
+    }
+    &--poster {
+      background-color: var(--x-border);
+      position: absolute;
+      z-index: 100;
+      width: 100px;
+      height: 150px;
+      bottom: -50px;
+      left: 15px;
+      border-radius: 5px;
+    }
+  }
+}

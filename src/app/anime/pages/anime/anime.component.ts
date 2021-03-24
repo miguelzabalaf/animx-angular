@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, RouterOutlet, Router } from '@angular/router';
 import { MENU } from '../../../core/constants';
 import { Page } from '../../../interfaces/page';
 
@@ -11,11 +13,18 @@ export class AnimeComponent implements OnInit {
 
   animeSubmenu!: Page[];
 
-  constructor() {
+  constructor(
+    private location: Location
+  ) {
     this.animeSubmenu = MENU.filter(page => page.title.toLowerCase() === 'anime')
-   }
+  }
 
   ngOnInit(): void {
+
+  }
+
+  goBack() {
+    this.location.back();
   }
 
 }

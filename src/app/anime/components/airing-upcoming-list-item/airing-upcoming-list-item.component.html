@@ -1,11 +1,11 @@
-<div class="airing-list__anime">
+<div class="airing-list__anime" [routerLink]="['/anime', anime.mal_id]">
   <picture class="anime-img">
-    <img [src]="anime.image_url" alt="">
+    <img [src]="anime.image_url" [alt]="anime.title">
   </picture>
   <div class="anime-details">
     <p class="anime-details__title">{{ anime.title }}</p>
     <div class="anime-details__on-air" *ngIf="anime.start_date">
-      <span>{{  navigationType === 'upcoming' ? 'Soon: ' + anime.start_date : anime.start_date }}</span>
+      <span>{{ navigationType === 'upcoming' ? 'Soon: ' + anime.start_date : anime.start_date }}</span>
     </div>
   </div>
 </div>

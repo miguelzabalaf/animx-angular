@@ -3,6 +3,8 @@
   background-color: var(--x-black-lite);
   border-radius: 5px;
   overflow: hidden;
+  outline: none;
+  border: none;
   cursor: pointer;
   &:hover .anime-img img {
     transform: scale(1.05);

@@ -72,6 +72,70 @@
         }
       }
     }
+    .goBack {
+      background-color: rgba($color: #FFF, $alpha: 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      transition: all 0.3s;
+      user-select: none;
+      position: relative;
+      z-index: 100;
+      cursor: pointer;
+      & > * {
+        user-select: none;
+      }
+      &:active {
+        background-color: rgba($color: #FFF, $alpha: 0.15);
+      }
+    }
+  }
+}
+
+.hide-background-nav {
+  background-color: transparent !important;
+}
+
+.hide-anime__hero {
+  transition: all 0.3s;
+  // transform: scaleY(0%);
+  height: 0px;
+  margin-bottom: 0px;
+  visibility: hidden;
+  & > * {
+    animation: hideHero 0.3s  ease-in-out;
+    visibility: hidden;
+  }
+}
+
+.show-anime__hero {
+  // transform: scaleY(100%);
+  transition: all 0.3s;
+  height: 300px;
+  & > * {
+    animation: showHero 0.3s  ease-in-out;
+    visibility: visible;
+  }
+}
+
+@keyframes hideHero {
+  from {
+    opacity: 1;
+    visibility: visible;
+  } to {
+    opacity: 0;
+  }
+}
+
+@keyframes showHero {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  } to {
+    opacity: 1;
   }
 }
 
