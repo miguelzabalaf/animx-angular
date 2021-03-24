@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderService } from '../../../services/header.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { HeaderService } from '../../../services/header.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit {
 
   public stateMuted: string = 'muted';
   public isMuted: boolean = true;
@@ -16,11 +16,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscribeToStateMuted();
     this.subscribeToIsMuted();
-  }
-
-  ngOnDestroy(): void {
-    this.headerService.stateMuted.unsubscribe();
-    this.headerService.isMuted.unsubscribe();
   }
 
   subscribeToStateMuted(): void {
