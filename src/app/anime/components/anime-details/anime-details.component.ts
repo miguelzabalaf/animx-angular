@@ -32,10 +32,17 @@ export class AnimeDetailsComponent implements OnInit {
   getAnimeResponse() {
     this.animeService.getAnimeById(this.animeId).subscribe(anime => {
       this.anime = anime;
-      console.log(anime);
     }, err => {
       console.log(err);
     })
+  }
+
+  isAiring(): boolean {
+    return this.anime?.airing;
+  }
+
+  haveRating(): boolean {
+    return this.anime?.rating === 'None' || '' ? false : true;
   }
 
 }

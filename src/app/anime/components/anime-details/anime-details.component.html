@@ -3,6 +3,47 @@
     <picture class="anime-details__hero--baner">
       <img [src]="anime?.image_url" alt="">
     </picture>
-    <img class="anime-details__hero--poster" [src]="anime?.image_url" alt="">
+    <picture class="anime-details__hero--poster">
+      <img [src]="anime?.image_url" alt="">
+    </picture>
+  </div>
+  <div class="anime-details__title container-content">
+    <h1>{{ anime?.title }}</h1>
+  </div>
+  <div class="anime-details__min-info  container-content">
+    <small class="year">{{ anime?.aired?.prop?.from?.year }}</small>
+    <small class="rating" *ngIf="haveRating()">{{ anime?.rating }}</small>
+    <small *ngIf="isAiring()" class="broadcast">
+      {{ anime?.broadcast }}
+      <small class="status">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-broadcast"
+          viewBox="0 0 16 16">
+          <path
+            d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707zm2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 0 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708zm5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708zm2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707zM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+        </svg>
+      </small>
+    </small>
+  </div>
+  <div class="anime-details__synopsis container-content">
+    <p>{{ anime?.synopsis }}</p>
+  </div>
+  <div class="anime-details__more container-content">
+    <a [href]="anime?.trailer_url" target="_blank" class="trailer">
+      <span>Watch Trailer</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-play-fill"
+        viewBox="0 0 16 16">
+        <path
+          d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+      </svg>
+    </a>
+    <a [href]="anime?.url" target="_blank" class="information">
+      More Information
+    </a>
+  </div>
+  <div class="anime-details__genres container-content">
+    <h3 class="">Genres</h3>
+    <div class="genres_list">
+      <div class="genre" *ngFor="let genre of anime?.genres"><span>{{ genre.name }}</span></div>
+    </div>
   </div>
 </section>

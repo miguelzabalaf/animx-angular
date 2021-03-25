@@ -73,7 +73,7 @@
       }
     }
     .goBack {
-      background-color: rgba($color: #FFF, $alpha: 0.1);
+      background-color: rgba($color: #FFF, $alpha: 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -89,7 +89,7 @@
         user-select: none;
       }
       &:active {
-        background-color: rgba($color: #FFF, $alpha: 0.15);
+        background-color: rgba($color: #FFF, $alpha: 0.5);
       }
     }
   }

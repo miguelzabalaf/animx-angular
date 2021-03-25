@@ -22,14 +22,173 @@
       }
     }
     &--poster {
-      background-color: var(--x-border);
       position: absolute;
       z-index: 100;
-      width: 100px;
-      height: 150px;
       bottom: -50px;
-      left: 15px;
+      left: 0;
+      right: 0;
+      // border: 1px solid red;
       border-radius: 5px;
+      max-width: 1200px;
+      padding: 0 15px;
+      margin: auto;
+      img {
+        background-color: var(--x-border);
+        height: 150px;
+        width: 100px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+    }
+  }
+  &__title {
+    margin-top: 10px;
+    h1 {
+      padding-left: 125px;
+      font-size: 20px;
+      color: var(--x-text);
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      margin-right: 5px;
+      .title-japanese {
+        color: var(--x-text-muted);
+        letter-spacing: 2.5px;
+        font-weight: 300;
+      }
+    }
+  }
+  &__min-info {
+    margin-top: 25px;
+    padding: 0 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    .year {
+      color: var(--x-text-muted);
+    }
+    .rating {
+      background-color: var(--x-black-lite);
+      padding: 2px 3px;
+      color: var(--x-text-muted);
+      font-size: 12px;
+      border-radius: 3px;
+    }
+    .broadcast {
+      color: var(--x-text-muted);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      .status {
+        background-color: var(--x-primary);
+        padding: 2px 3px;
+        color: var(--x-text);
+        font-size: 12px;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      strong {
+        font-weight: 500;
+        color: var(--x-text);
+      }
+    }
+  }
+  &__synopsis {
+    padding: 0 15px;
+    margin-top: 15px;
+    p {
+      text-align: justify;
+      color: var(--x-text);
+      font-size: 14px;
+      //@at-root
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      margin-right: 5px;
+    }
+  }
+  &__more {
+    padding: 0 15px;
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    a {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+      color: var(--x-text-muted);
+      text-decoration: none;
+    }
+    .trailer {
+      background-color: var(--x-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.3s;
+      color: var(--x-text);
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+    .information {
+      transition: all 0.3s;
+      background-color: var(--x-border);
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+  }
+  &__genres {
+    padding: 0 15px;
+    margin-top: 15px;
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .genres_list {
+      display: flex;
+      gap: 10px;
+      overflow: auto;
+      padding-bottom: 10px;
+      .genre {
+        background-color: var(--x-black-lite);
+        padding: 5px 0;
+        border-radius: 5px;
+        min-width: 125px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+          filter: brightness(0.9);
+        }
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 425px) {
+  .anime-details {
+    &__title {
+      h1 {
+        font-size: 16px;
+      }
+    }
+    &__more {
+      flex-wrap: wrap;
+      flex-direction: column;
     }
   }
 }
