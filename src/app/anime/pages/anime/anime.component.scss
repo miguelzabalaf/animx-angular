@@ -72,31 +72,33 @@
         }
       }
     }
-    .goBack {
-      background-color: rgba($color: #FFF, $alpha: 0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      transition: all 0.3s;
+  }
+  .goBack {
+    background-color: rgba($color: #FFF, $alpha: 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s;
+    user-select: none;
+    position: relative;
+    top: 65px;
+    z-index: 5;
+
+    cursor: pointer;
+    & > * {
       user-select: none;
-      position: relative;
-      z-index: 100;
-      cursor: pointer;
-      & > * {
-        user-select: none;
-      }
-      &:active {
-        background-color: rgba($color: #FFF, $alpha: 0.5);
-      }
+    }
+    &:active {
+      background-color: rgba($color: #FFF, $alpha: 0.5);
     }
   }
 }
 
 .hide-background-nav {
-  background-color: transparent !important;
+  display: mone;
 }
 
 .hide-anime__hero {

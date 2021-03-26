@@ -2,12 +2,11 @@
   background-color: var(--x-black);
   height: auto;
   border-bottom: 1px solid var(--x-border);
-  position: sticky;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 10;
-  position: sticky;
   &__menu {
     padding: 10px 15px;
     display: flex;
