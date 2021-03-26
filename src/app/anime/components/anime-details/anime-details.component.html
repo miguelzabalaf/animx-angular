@@ -30,7 +30,7 @@
   <div class="anime-details__more container-content">
     <a [href]="anime?.trailer_url" target="_blank" class="trailer">
       <span>Watch Trailer</span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-play-fill"
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-play-fill"
         viewBox="0 0 16 16">
         <path
           d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
@@ -42,8 +42,17 @@
   </div>
   <div class="anime-details__genres container-content">
     <h3 class="">Genres</h3>
-    <div class="genres_list">
+    <div class="genres_list container-scroll">
       <div class="genre" *ngFor="let genre of anime?.genres"><span>{{ genre.name }}</span></div>
+    </div>
+  </div>
+  <div class="anime-details__characters container-content">
+    <h3 class="">Characters</h3>
+    <div class="characters_list container-scroll">
+      <div class="character" *ngFor="let character of characters">
+        <img loading=lazy [src]="character?.image_url" [alt]="character?.name">
+        <small>{{ character?.name }}</small>
+      </div>
     </div>
   </div>
 </section>

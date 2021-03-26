@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Anime } from '../../../interfaces/anime';
 import { AnimeService } from '../../../services/anime.service';
+import { Character } from '../../../interfaces/characters-response';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-anime-details',
@@ -12,6 +14,7 @@ export class AnimeDetailsComponent implements OnInit {
 
   public animeId: string = '';
   public anime!: Anime;
+  public characters: Character[] = [];
 
   constructor(
     private activateRoute: ActivatedRoute,
@@ -26,12 +29,21 @@ export class AnimeDetailsComponent implements OnInit {
     this.activateRoute.params.subscribe(({ id }) => {
       this.animeId = id;
       this.getAnimeResponse();
+      this.getCharactersResponse();
     })
   }
 
-  getAnimeResponse() {
+  getAnimeResponse(): void {
     this.animeService.getAnimeById(this.animeId).subscribe(anime => {
       this.anime = anime;
+    }, err => {
+      console.log(err);
+    })
+  }
+
+  getCharactersResponse(): void {
+    this.animeService.getCharactersByAnimeId(this.animeId).subscribe(characters => {
+      this.characters = characters;
     }, err => {
       console.log(err);
     })

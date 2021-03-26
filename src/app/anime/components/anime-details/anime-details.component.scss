@@ -122,6 +122,7 @@
       text-align: center;
       padding: 10px;
       border-radius: 5px;
+      font-size: 13px;
       color: var(--x-text-muted);
       text-decoration: none;
     }
@@ -172,6 +173,51 @@
         }
         span {
           font-size: 12px;
+        }
+      }
+    }
+  }
+  &__characters {
+    padding: 0 15px;
+    margin-top: 15px;
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .characters_list {
+      display: flex;
+      gap: 10px;
+      overflow: auto;
+      padding-bottom: 10px;
+      .character {
+        cursor: pointer;
+        width: 90px;
+        height: auto;
+        flex-shrink: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        &:hover {
+          filter: brightness(1.05);
+        }
+        img {
+          background-color: var(--x-border);
+          border-radius: 5px;
+          height: 110px;
+          width: 100%;
+          object-fit: cover;
+        }
+        small {
+          margin-top: 3px;
+          font-size: 11px;
+          color: var(--x-text);
+          //
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          margin-right: 3px;
         }
       }
     }
