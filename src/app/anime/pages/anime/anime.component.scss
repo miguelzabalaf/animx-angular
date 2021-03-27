@@ -86,6 +86,10 @@
     position: relative;
     top: 0px;
     z-index: 5;
+    mix-blend-mode: difference;
+    & > * {
+      mix-blend-mode: normal;
+    }
 
     cursor: pointer;
     & > * {

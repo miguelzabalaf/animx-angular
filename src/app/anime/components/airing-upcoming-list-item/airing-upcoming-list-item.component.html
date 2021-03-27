@@ -1,6 +1,6 @@
 <div class="airing-list__anime" [routerLink]="['/anime', anime.mal_id]">
   <picture class="anime-img">
-    <img [src]="anime.image_url" [alt]="anime.title">
+    <img loading=lazy [src]="anime.image_url" [alt]="anime.title">
   </picture>
   <div class="anime-details">
     <p class="anime-details__title">{{ anime.title }}</p>

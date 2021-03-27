@@ -1,6 +1,6 @@
 <div class="top-anime" [routerLink]="['/anime', anime.mal_id]">
   <picture class="top-anime__image">
-    <img [src]="anime.image_url" [alt]="anime.title">
+    <img loading=lazy [src]="anime.image_url" [alt]="anime.title">
   </picture>
   <div class="top-anime__info">
     <p class="top-anime__info--title" [title]="anime.title">{{ anime.title }}</p>
