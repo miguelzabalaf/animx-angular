@@ -8,6 +8,7 @@ import { AiringUpcomingListComponent } from './components/airing-upcoming-list/a
 import { AiringUpcomingListItemComponent } from './components/airing-upcoming-list-item/airing-upcoming-list-item.component';
 import { TopListItemComponent } from './components/top-list-item/top-list-item.component';
 import { AnimeDetailsComponent } from './components/anime-details/anime-details.component';
+import { CharacterDetailsComponent } from './components/character-details/character-details.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { AnimeDetailsComponent } from './components/anime-details/anime-details.
     AiringUpcomingListItemComponent,
     TopListItemComponent,
     AnimeDetailsComponent,
+    CharacterDetailsComponent,
   ],
   imports: [
     CommonModule,

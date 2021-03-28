@@ -15,6 +15,8 @@ export class AnimeDetailsComponent implements OnInit {
   public animeId: string = '';
   public anime!: Anime;
   public characters: Character[] = [];
+  public showCharacterDetail: boolean = false;
+  public characterSelected!: number;
 
   constructor(
     private activateRoute: ActivatedRoute,
@@ -55,6 +57,15 @@ export class AnimeDetailsComponent implements OnInit {
 
   haveRating(): boolean {
     return this.anime?.rating === 'None' || '' ? false : true;
+  }
+
+  onShowCharacterDetail(character: Character) {
+    this.characterSelected = character.mal_id;
+    this.showCharacterDetail = true;
+  }
+
+  eventDismiss(ev: boolean) {
+    this.showCharacterDetail = ev;
   }
 
 }

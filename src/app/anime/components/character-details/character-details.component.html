@@ -1,0 +1,28 @@
+<div class="character-details">
+  <div class="character-details__bg" [ngClass]="{'show-bg': visible, 'hide-bg': !visible}"
+    (click)="dismissCharacterDetails()"></div>
+  <div class="character-details__details" [ngClass]="{'show-details': visible, 'hide-details': !visible}">
+    <div class="details-header">
+      <div class="details-header__close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FFF" class="bi bi-x" viewBox="0 0 16 16">
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+      </div>
+    </div>
+    <div class="details-hero">
+      <picture class="img">
+        <img [src]="character?.image_url" alt="">
+      </picture>
+      <div class="details">
+        <h3 class="details__name">{{ character?.name }}</h3>
+        <h3 class="details__subtitle">Actors</h3>
+        <div class="details__actors">
+          <img [ngStyle]="{'z-index': character?.voice_actors.length - idx}"
+            *ngFor="let actor of character?.voice_actors; let idx = index" class="actor" [src]="actor.image_url"
+            [alt]="actor?.name" [title]="actor?.name">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

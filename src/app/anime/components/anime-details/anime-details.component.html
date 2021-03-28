@@ -49,10 +49,14 @@
   <div class="anime-details__characters container-content">
     <h3 class="">Characters</h3>
     <div class="characters_list container-scroll">
-      <div class="character" *ngFor="let character of characters">
+      <div class="character" (click)="onShowCharacterDetail(character)" *ngFor="let character of characters">
         <img loading=lazy [src]="character?.image_url" [alt]="character?.name">
         <small>{{ character?.name }}</small>
       </div>
     </div>
   </div>
 </section>
+
+<app-character-details *ngIf="showCharacterDetail" [visible]="showCharacterDetail" [characterId]="characterSelected"
+  (onDismissDetails)="eventDismiss($event)">
+</app-character-details>

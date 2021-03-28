@@ -35,3 +35,30 @@ export enum Language {
   Italian = "Italian",
   Japanese = "Japanese",
 }
+
+
+export interface CharacterDetails {
+  request_hash: string;
+  request_cached: boolean;
+  request_cache_expiry: number;
+  mal_id: number;
+  url: string;
+  name: string;
+  name_kanji: null;
+  nicknames: any[];
+  about: string;
+  member_favorites: number;
+  image_url: string;
+  animeography: Animeography[];
+  mangaography: Animeography[];
+  voice_actors: Animeography[];
+}
+
+export interface Animeography {
+  mal_id: number;
+  name: string;
+  url: string;
+  image_url: string;
+  role?: string;
+  language?: string;
+}

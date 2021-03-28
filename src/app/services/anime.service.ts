@@ -5,7 +5,7 @@ import { TopAiringAndUpcoming } from '../interfaces/top-airing-and-upcoming';
 import { Observable } from 'rxjs';
 import { TopAnime } from '../interfaces/top-anime-response';
 import { Anime } from '../interfaces/anime';
-import { Character } from '../interfaces/characters-response';
+import { Character, CharacterDetails } from '../interfaces/characters-response';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +32,7 @@ export class AnimeService {
   }
 
   getAnimeById(id: string): Observable<Anime> {
-    return this.http.get<Anime>(`${this.BASE_URL}/anime/${id}`)
+    return this.http.get<Anime>(`${this.BASE_URL}/anime/${id}`);
   }
 
   getCharactersByAnimeId(id: string): Observable<Character[]> {
@@ -40,6 +40,10 @@ export class AnimeService {
       .pipe(map((data: any) => {
         return data.characters;
       }))
+  }
+
+  getCharacterById(id: number): Observable<CharacterDetails> {
+    return this.http.get<CharacterDetails>(`${this.BASE_URL}/character/${id}`);
   }
 
 }
