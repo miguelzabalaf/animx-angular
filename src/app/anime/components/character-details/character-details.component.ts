@@ -1,26 +1,32 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { CharacterDetails } from '../../../interfaces/characters-response';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { CharacterDetails, Animeography } from '../../../interfaces/characters-response';
 import { AnimeService } from '../../../services/anime.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-character-details',
   templateUrl: './character-details.component.html',
   styleUrls: ['./character-details.component.scss']
 })
-export class CharacterDetailsComponent implements OnInit {
+export class CharacterDetailsComponent implements OnInit, OnDestroy {
 
   @Input() visible: boolean = false;
   @Input() characterId!: number;
   @Output() onDismissDetails: EventEmitter<boolean> = new EventEmitter();
 
   public character!: CharacterDetails;
-
   constructor(
-    private animeService: AnimeService
+    private animeService: AnimeService,
+    private router: Router
   ) { }
+
+  ngOnDestroy(): void {
+    document.documentElement.style.overflow = "auto";
+  }
 
   ngOnInit(): void {
     this.getCharacterDetailsResponse();
+    document.documentElement.style.overflow = "hidden";
   }
 
   dismissCharacterDetails(): void {
@@ -33,6 +39,12 @@ export class CharacterDetailsComponent implements OnInit {
       this.character = character;
       console.log(this.character)
     })
+  }
+
+  showAnime(anime: Animeography) {
+    this.dismissCharacterDetails();
+    this.router.navigate(['anime', anime.mal_id])
+    window.scrollTo(500, 0);
   }
 
 }

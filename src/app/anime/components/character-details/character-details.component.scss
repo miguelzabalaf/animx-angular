@@ -17,7 +17,7 @@
     background-color: var(--x-black-lite);
     right: 0;
     left: 0;
-    top: 50%;
+    // top: 40%;
     bottom: 0;
     z-index: 2;
     padding: 10px;
@@ -33,6 +33,10 @@
         height: 25px;
         border-radius: 50%;
         background-color: var(--x-border);
+        cursor: pointer;
+        &:hover {
+          filter: brightness(0.9);
+        }
       }
     }
 
@@ -69,6 +73,7 @@
         &__actors {
           display: flex;
           padding-left: 10px;
+          align-items: center;
           .actor {
             width: 35px;
             height: 35px;
@@ -78,6 +83,34 @@
             margin-left: -10px;
             background-color: var(--x-border);
             border: 3px solid var(--x-black-lite);
+          }
+        }
+      }
+    }
+
+    .details-content {
+      padding-top: 10px;
+      h3 {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 5px;
+        color: var(--x-text-muted);
+      }
+      .animes {
+        display: flex;
+        gap: 10px;
+        overflow: auto;
+        padding-bottom: 10px;
+        .anime {
+          width: 75px;
+          height: 115px;
+          flex-shrink: 0;
+          img {
+            width: 100%;
+            height: 100%;
+            background-color: var(--x-border);
+            border-radius: 5px;
+            object-fit: cover;
           }
         }
       }
