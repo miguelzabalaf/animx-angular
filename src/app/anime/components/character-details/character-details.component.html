@@ -1,7 +1,8 @@
-<div class="character-details">
-  <div class="character-details__bg" [ngClass]="{'show-bg': visible, 'hide-bg': !visible}"
+<app-custom-loading *ngIf="!haveData"></app-custom-loading>
+<div class="character-details" *ngIf="haveData">
+  <div class="character-details__bg" [ngClass]="{'show-bg': haveData, 'hide-bg': !haveData}"
     (click)="dismissCharacterDetails()"></div>
-  <div class="character-details__details" [ngClass]="{'show-details': visible, 'hide-details': !visible}">
+  <div class="character-details__details" [ngClass]="{'show-details': haveData, 'hide-details': !haveData}">
     <div class="details-header">
       <div class="details-header__close" (click)="dismissCharacterDetails()">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FFF" class="bi bi-x" viewBox="0 0 16 16">
@@ -25,11 +26,21 @@
         </div>
       </div>
     </div>
-    <div class="details-content">
+    <div class="details-content-anime">
       <h3>Entries in Anime</h3>
-      <div class="animes">
+      <div class="animes container-scroll">
         <div class="anime" (click)="showAnime(anime)" *ngFor="let anime of character?.animeography">
           <img [src]="anime?.image_url" [alt]="anime?.name">
+          <small>{{ anime?.role }}</small>
+        </div>
+      </div>
+    </div>
+    <div class="details-content-manga">
+      <h3>Entries in Manga</h3>
+      <div class="mangas container-scroll">
+        <div class="manga" *ngFor="let manga of character?.mangaography">
+          <img [src]="manga?.image_url" [alt]="manga?.name">
+          <small>{{ manga?.role }}</small>
         </div>
       </div>
     </div>

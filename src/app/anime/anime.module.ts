@@ -9,6 +9,7 @@ import { AiringUpcomingListItemComponent } from './components/airing-upcoming-li
 import { TopListItemComponent } from './components/top-list-item/top-list-item.component';
 import { AnimeDetailsComponent } from './components/anime-details/anime-details.component';
 import { CharacterDetailsComponent } from './components/character-details/character-details.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { CharacterDetailsComponent } from './components/character-details/charac
   ],
   imports: [
     CommonModule,
-    AnimeRoutingModule
+    AnimeRoutingModule,
+    SharedModule
   ]
 })
 export class AnimeModule { }

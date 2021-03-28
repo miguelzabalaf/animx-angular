@@ -15,6 +15,8 @@ export class CharacterDetailsComponent implements OnInit, OnDestroy {
   @Output() onDismissDetails: EventEmitter<boolean> = new EventEmitter();
 
   public character!: CharacterDetails;
+  public haveData: boolean = false;
+
   constructor(
     private animeService: AnimeService,
     private router: Router
@@ -37,7 +39,9 @@ export class CharacterDetailsComponent implements OnInit, OnDestroy {
   getCharacterDetailsResponse(): void {
     this.animeService.getCharacterById(this.characterId).subscribe(character => {
       this.character = character;
-      console.log(this.character)
+      this.haveData = this.visible;
+    }, err => {
+      console.warn(err)
     })
   }
 

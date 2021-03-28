@@ -16,7 +16,7 @@ export class AiringUpcomingListComponent implements OnInit {
 
   constructor(
     private animeService: AnimeService,
-    private activateRoute: ActivatedRoute  ) { }
+    private activateRoute: ActivatedRoute) { }
 
 
   ngOnInit(): void {
@@ -24,14 +24,14 @@ export class AiringUpcomingListComponent implements OnInit {
   }
 
   getNavigationType(): void {
-    this.activateRoute.data.subscribe( ({ navigationType }) => {
+    this.activateRoute.data.subscribe(({ navigationType }) => {
       this.navigationType = navigationType;
       this.getAiringOrUpcoming();
     });
   }
 
   getAiringOrUpcoming(): void {
-    this.animeService.getTopAiringOrUpcoming(this.navigationType).subscribe( data => {
+    this.animeService.getTopAiringOrUpcoming(this.navigationType).subscribe(data => {
       if (this.navigationType === 'airing') {
         this.topAiring = data;
       } else if (this.navigationType === 'upcoming') {
@@ -44,7 +44,17 @@ export class AiringUpcomingListComponent implements OnInit {
   }
 
   getTop(): TopAiringAndUpcoming[] {
-    return ( this.navigationType === 'airing' ? this.topAiring : this.topUpcoming )
+    return (this.navigationType === 'airing' ? this.topAiring : this.topUpcoming)
+  }
+
+  conditionalForLoading(): boolean {
+    if (this.navigationType === 'airing' && !this.topAiring) {
+      return true;
+    } else if (this.navigationType === 'upcoming' && !this.topUpcoming) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 }
