@@ -12,14 +12,14 @@
     </div>
     <div class="details-hero">
       <picture class="img">
-        <img [src]="character?.image_url" alt="">
+        <img [src]="character?.image_url" [alt]="character?.name">
       </picture>
       <div class="details">
         <h3 class="details__name">{{ character?.name }}</h3>
         <h3 class="details__subtitle">Actors</h3>
         <div class="details__actors">
-          <img [ngStyle]="{'z-index': character?.voice_actors.length - idx}"
-            *ngFor="let actor of character?.voice_actors; let idx = index" class="actor" [src]="actor.image_url"
+          <img z-index="character?.voice_actors?.length - idx"
+            *ngFor="let actor of character?.voice_actors; let idx = index" class="actor" [src]="actor?.image_url"
             [alt]="actor?.name" [title]="actor?.name">
         </div>
       </div>
