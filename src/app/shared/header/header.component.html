@@ -8,8 +8,9 @@
         (click)="subHeaderIsVisible = false" [routerLinkActiveOptions]="{ exact: false }" routerLinkActive="active">{{
         item.title }}</div>
     </nav>
-    <div class="menu-mobile" (click)="onVideoSilence()">
-      <div class="line" *ngFor="let item of [].constructor(3)"></div>
+    <div class="menu-mobile" (click)="toggleMenuResponsive()">
+      <div class="line" [ngClass]="{'line-active': this.menuResponsive.isOpenMenu}"
+        *ngFor="let item of [].constructor(3)"></div>
     </div>
   </div>
   <div *ngIf="subHeaderIsVisible" class="header__submenu navigation-fluid" (mouseover)="subHeaderHover()"
@@ -28,3 +29,4 @@
 
   </div>
 </header>
+<app-menu-responsive #menuResponsive></app-menu-responsive>

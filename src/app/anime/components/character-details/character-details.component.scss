@@ -104,17 +104,18 @@
       }
       .animes {
         display: flex;
-        gap: 10px;
         overflow: auto;
         padding-bottom: 10px;
         .anime{
           width: 75px;
           height: 140px;
+          margin-right: 10px;
           flex-shrink: 0;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: space-between;
+          cursor: pointer;
           img {
             width: 100%;
             height: 80%;
@@ -145,17 +146,18 @@
       }
       .mangas {
         display: flex;
-        gap: 10px;
         overflow: auto;
         padding-bottom: 10px;
         .manga{
           width: 75px;
           height: 140px;
+          margin-right: 10px;
           flex-shrink: 0;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: space-between;
+          cursor: pointer;
           img {
             width: 100%;
             height: 80%;

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MENU } from '../../core/constants';
 import { Page } from '../../interfaces/page';
 import { HeaderService } from '../../services/header.service';
+import { MenuResponsiveComponent } from '../menu-responsive/menu-responsive.component';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +15,8 @@ export class HeaderComponent implements OnInit {
   public subHeaderIsVisible: boolean = false;
   public actualSubPages: Page[] = [];
   public showBackgroundMenu: boolean = true;
+
+  @ViewChild('menuResponsive') menuResponsive!: MenuResponsiveComponent;
 
   constructor(public headerService: HeaderService) { }
 
@@ -49,6 +52,19 @@ export class HeaderComponent implements OnInit {
 
   subHeaderLeave() {
     this.subHeaderIsVisible = false;
+  }
+
+  openMenuResponsive(): void {
+    this.onVideoSilence()
+    this.menuResponsive.open();
+  }
+
+  closeMenuResponsive(): void {
+    this.menuResponsive.close();
+  }
+
+  toggleMenuResponsive(): void {
+    return this.menuResponsive.isOpenMenu ? this.closeMenuResponsive() : this.openMenuResponsive()
   }
 
 }

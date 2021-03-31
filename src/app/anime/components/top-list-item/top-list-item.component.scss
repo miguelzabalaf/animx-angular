@@ -22,7 +22,6 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
     &--title {
       font-size: 14px;
       color: var(--x-text);
@@ -33,14 +32,16 @@
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
       text-align: start;
+      margin-bottom: 5px;
     }
     &--date {
       font-size: 11px;
       color: var(--x-text-muted);
+      margin-bottom: 5px;
     }
     &--details {
+      margin-bottom: 5px;
       display: flex;
-      gap: 10px;
       align-items: center;
       .type {
         background-color: var(--x-primary);
@@ -48,6 +49,7 @@
         padding: 1.5px 3px;
         border-radius: 3px;
         font-size: 10px;
+        margin-right: 10px;
       }
       .episodes {
         font-size: 11px;

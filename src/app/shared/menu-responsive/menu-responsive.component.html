@@ -1,0 +1,15 @@
+<div class="menu-responsive" [ngClass]="{'visibleResponsiveMenu': isOpenMenu}">
+  <div class="menu-responsive__bg" [ngClass]="{'openBg': isOpenMenu, 'closeBg': !isOpenMenu}" (click)="close()"></div>
+  <div class="menu-responsive__menu" [ngClass]="{'stateOpen': isOpenMenu, 'closeMenu': !isOpenMenu}">
+    <p class="small-title">Menu</p>
+    <div class="menu-items">
+      <div class="item" [routerLink]="[item.url]" [routerLinkActiveOptions]="{ exact: false }" routerLinkActive="active"
+        (click)="close()" *ngFor="let item of menu">
+        <p>{{ item.title }}</p>
+      </div>
+    </div>
+    <div class="menu-message">
+      <small>MyAnimeList API data and developed by Miguel Zabala Figueroa ©</small>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,142 @@
+.menu-responsive {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 4;
+  visibility: hidden;
+  &__bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    background-color: var(--x-black-transparent);
+    opacity: 0;
+    visibility: hidden;
+  }
+  &__menu {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 35%;
+    background-color: var(--x-black);
+    padding-top: 75px;
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(100%);
+    .small-title {
+      margin: 0 15px;
+      font-size: 12px;
+      color: var(--x-text-muted);
+    }
+    .menu-items {
+      .item {
+        padding: 15px;
+        cursor: pointer;
+        background-color: var(--x-black);
+        border: none;
+        outline: none;
+        &:hover {
+          filter: brightness(1.2);
+        }
+        p {
+          margin: 0;
+          color: var(--x-text);
+        }
+      }
+      .active {
+        p {
+          color: var(--x-primary);
+        }
+      }
+    }
+    .menu-message {
+      line-height: 12px;
+      text-align: center;
+      position: absolute;
+      padding: 0 15px;
+      bottom: 15px;
+      small {
+        font-size: 10.5px;
+        color: var(--x-text-muted);
+        text-align: center;
+      }
+    }
+  }
+}
+
+.visibleResponsiveMenu {
+  visibility: visible;
+}
+
+
+.stateOpen {
+  transform: translateX(0%);
+  animation: openMenu 0.3s ease-in-out;
+}
+
+@keyframes openMenu {
+  from {
+    opacity: 0.5;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.stateClose {
+  transform: translateX(100%);
+  animation: closeMenu 0.3s ease-in-out;
+}
+
+@keyframes closeMenu {
+  from {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  to {
+    opacity: 0.5;
+    transform: translateX(100%);
+  }
+}
+
+
+.openBg {
+  opacity: 1;
+  visibility: visible;
+  animation: openBg 0.3s ease-in-out;
+}
+
+@keyframes openBg {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.closeBg {
+  opacity: 0;
+  visibility: hidden;
+  animation: closeBg 0.3s ease-in-out;
+}
+
+@keyframes closeBg {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

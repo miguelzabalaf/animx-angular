@@ -1,13 +1,13 @@
-<div class="top-anime" [routerLink]="['/anime', anime.mal_id]">
+<div class="top-anime" [routerLink]="['/anime', anime?.mal_id]">
   <picture class="top-anime__image">
-    <img loading=lazy [src]="anime.image_url" [alt]="anime.title">
+    <img loading=lazy [src]="anime?.image_url" [alt]="anime?.title">
   </picture>
   <div class="top-anime__info">
-    <p class="top-anime__info--title" [title]="anime.title">{{ anime.title }}</p>
-    <small class="top-anime__info--date">{{ anime.start_date }} - {{ anime.end_date }}</small>
+    <p class="top-anime__info--title" [title]="anime?.title">{{ anime?.title }}</p>
+    <small class="top-anime__info--date">{{ anime?.start_date }} - {{ anime?.end_date }}</small>
     <div class="top-anime__info--details">
-      <small class="type">{{ anime.type }}</small>
-      <small class="episodes">{{ anime.episodes }} Episodes</small>
+      <small class="type">{{ anime?.type === 'TV' ? 'Anime' : anime?.type }}</small>
+      <small class="episodes">{{ anime?.episodes }} Episodes</small>
     </div>
   </div>
 </div>
