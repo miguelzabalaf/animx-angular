@@ -55,6 +55,8 @@
         cursor: pointer;
         filter: brightness(1.05);
         transition: all 0.3s;
+        border: none;
+        outline: none;
         & svg {
           transition: all 0.3s;
         }
@@ -187,6 +189,8 @@
           filter: brightness(1.05);
           transition: all 0.3s;
           margin-right: 25px;
+          border: none;
+          outline: none;
           & svg {
             transition: all 0.3s;
           }
