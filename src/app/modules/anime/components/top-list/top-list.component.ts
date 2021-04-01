@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimeService } from '../../../services/anime.service';
-import { TopAnime } from '../../../interfaces/top-anime-response';
+import { AnimeService } from '../../../../services/anime.service';
+import { TopAnime } from '../../../../interfaces/top-anime-response';
 
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TopAiringAndUpcoming } from '../../../interfaces/top-airing-and-upcoming';
-import { AnimeService } from '../../../services/anime.service';
+import { TopAiringAndUpcoming } from '../../../../interfaces/top-airing-and-upcoming';
+import { AnimeService } from '../../../../services/anime.service';
 
 @Component({
   selector: 'app-airing-upcoming-list',

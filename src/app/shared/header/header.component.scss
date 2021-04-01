@@ -62,6 +62,11 @@
           color: var(--x-primary);
         }
       }
+      .search-active {
+        svg {
+          color: var(--x-primary);
+        }
+      }
     }
     .nav-mobile {
       display: none;
@@ -186,6 +191,11 @@
             transition: all 0.3s;
           }
           &:hover svg {
+            color: var(--x-primary);
+          }
+        }
+        .search-active {
+          svg {
             color: var(--x-primary);
           }
         }

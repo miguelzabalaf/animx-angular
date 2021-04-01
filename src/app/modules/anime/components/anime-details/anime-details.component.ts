@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Anime } from '../../../interfaces/anime';
-import { AnimeService } from '../../../services/anime.service';
-import { Character } from '../../../interfaces/characters-response';
+import { Anime } from '../../../../interfaces/anime';
+import { AnimeService } from '../../../../services/anime.service';
+import { Character } from '../../../../interfaces/characters-response';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
