@@ -44,9 +44,29 @@
       .active {
         color: var(--x-primary);
       }
+      .search {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        filter: brightness(1.05);
+        transition: all 0.3s;
+        & svg {
+          transition: all 0.3s;
+        }
+        &:hover svg {
+          color: var(--x-primary);
+        }
+      }
     }
-    .menu-mobile {
+    .nav-mobile {
       display: none;
+      .menu-mobile {
+      }
     }
   }
 
@@ -127,24 +147,47 @@
       .nav {
         display: none;
       }
-      .menu-mobile {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
+      .nav-mobile {
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        padding: 10px 10px;
-        border: none;
-        transition: all 0.3s;
-        .line {
-          border: 1px solid var(--x-text-muted);
+        align-items: center;
+        .menu-mobile {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          padding: 10px 10px;
+          border: none;
+          transition: all 0.3s;
+          .line {
+            border: 1px solid var(--x-text);
+          }
+          .line-active {
+            border: 1px solid var(--x-primary);
+          }
+          &:active {
+            background-color: rgba($color: #ffffff, $alpha: 0.1);
+          }
         }
-        .line-active {
-          border: 1px solid var(--x-primary);
-        }
-        &:active {
-          background-color: rgba($color: #ffffff, $alpha: 0.1);
+        .search {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          background-color: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          filter: brightness(1.05);
+          transition: all 0.3s;
+          margin-right: 25px;
+          & svg {
+            transition: all 0.3s;
+          }
+          &:hover svg {
+            color: var(--x-primary);
+          }
         }
       }
     }
