@@ -1,8 +1,8 @@
 import { Location } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, RouterOutlet, Router } from '@angular/router';
-import { MENU } from '../../../core/constants';
-import { Page } from '../../../interfaces/page';
+import { MENU } from '../../../../core/constants';
+import { Page } from '../../../../interfaces/page';
 
 @Component({
   selector: 'app-anime',

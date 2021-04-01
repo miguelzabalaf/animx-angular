@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TopAnime } from '../../../interfaces/top-anime-response';
+import { TopAnime } from '../../../../interfaces/top-anime-response';
 
 @Component({
   selector: 'app-top-list-item',

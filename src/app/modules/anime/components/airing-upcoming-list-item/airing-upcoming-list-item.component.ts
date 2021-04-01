@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TopAiringAndUpcoming } from '../../../interfaces/top-airing-and-upcoming';
+import { TopAiringAndUpcoming } from '../../../../interfaces/top-airing-and-upcoming';
 
 @Component({
   selector: 'app-airing-upcoming-list-item',

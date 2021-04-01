@@ -1,0 +1,21 @@
+.search {
+  padding: 15px 10px;
+  // Hero
+  &__hero {
+    width: 100%;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  // Title
+  &__title {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 25px;
+  }
+  &__description {
+    color: var(--x-text-muted);
+    font-size: 14px;
+  }
+}

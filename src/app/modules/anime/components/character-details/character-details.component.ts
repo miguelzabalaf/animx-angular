@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { CharacterDetails, Animeography } from '../../../interfaces/characters-response';
-import { AnimeService } from '../../../services/anime.service';
+import { CharacterDetails, Animeography } from '../../../../interfaces/characters-response';
+import { AnimeService } from '../../../../services/anime.service';
 import { Router } from '@angular/router';
 
 @Component({
