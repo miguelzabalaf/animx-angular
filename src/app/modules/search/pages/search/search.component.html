@@ -4,16 +4,21 @@
       <img src="assets/animx-poster.png" alt="">
     </picture>
     <!--  -->
-    <h1 class="search__title">Look for anything in Animx</h1>
+    <h1 class="search__title">Find anime and Manga in Anime</h1>
     <p class="search__description">The Animx application was developed by Miguel Zabala Figueroa with learning
-      intentions, the information presented in this search will be thanks to the public information provided by
-      MyAnimeList. The use of filters is recommended for greater precision in the requested search.</p>
+      intentions.</p>
 
     <br>
 
-    <form class="search__form" [formGroup]='searchForm'>
+    <form class="search__form" [formGroup]='searchForm' (ngSubmit)="search()">
       <div class="name">
         <label for="name_input">Name</label>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"
+          class="bi bi-search">
+          <path _ngcontent-sda-c17=""
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
+          </path>
+        </svg>
         <input id="name_input" type="text" autocomplete="off" class="search__form--input-text" formControlName="q">
       </div>
       <div class="type">
@@ -35,26 +40,12 @@
           </option>
         </select>
       </div>
-      <button class="btn-search" [disabled]="validSearch()" (click)="search()">Search</button>
+      <button class="btn-search" type="submit" [disabled]="validSearch()" (click)="search()">Search</button>
     </form>
-
-    <!-- <pre>{{ searchForm.value | json }}</pre>
-    <pre>{{ typeControl.value | json }}</pre>
-    <pre>{{ searchForm.valid | json }}</pre> -->
-
-    <div class="search__results">
-      <div class="result" *ngFor="let item of resultAnime" [routerLink]="['/anime', item.mal_id]"
-        routerLinkActive="router-link-active">
-        <picture class="result-img">
-          <img [src]="item.image_url" [alt]="item.title">
-        </picture>
-        <div class="result-info">
-          <h3 class="title" [title]="item.title">{{ item.title }}</h3>
-          <p class="synopsis">{{ item.synopsis }}</p>
-          <span class="episodes">Episodes: {{ item.episodes }}</span>
-        </div>
-      </div>
-    </div>
-
+    <app-search-result [animes]="resultAnime" [mangas]="resultManga" [loading]="loadingSearch"></app-search-result>
   </div>
 </div>
+
+<!-- <pre>{{ searchForm.value | json }}</pre>
+<pre>{{ typeControl.value | json }}</pre>
+<pre>{{ searchForm.valid | json }}</pre> -->

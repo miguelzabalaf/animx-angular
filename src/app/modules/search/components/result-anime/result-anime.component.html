@@ -1,0 +1,10 @@
+<div class="result">
+  <picture class="result-img">
+    <img [src]="anime.image_url" [alt]="anime.title">
+  </picture>
+  <div class="result-info">
+    <h3 class="title" [title]="anime.title">{{ anime.title }}</h3>
+    <p class="synopsis">{{ anime.synopsis }}</p>
+    <span class="episodes">Episodes: {{ anime.episodes }}</span>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<app-custom-loading *ngIf="loading"></app-custom-loading>
+<div class="search__results">
+  <app-result-anime *ngFor="let anime of animes" [anime]="anime" [routerLink]="['/anime', anime.mal_id]">
+  </app-result-anime>
+  <app-result-manga *ngFor="let manga of mangas" [manga]="manga">
+  </app-result-manga>
+</div>

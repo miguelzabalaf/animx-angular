@@ -17,6 +17,7 @@ export class SearchComponent implements OnInit, AfterContentChecked {
   public mangaStatus!: any[];
   public resultAnime: ResultAnime[] = [];
   public resultManga: ResultManga[] = [];
+  public loadingSearch: boolean = false;
 
   searchForm: FormGroup = this.fb.group({
     q: ['', Validators.minLength(3)],
@@ -63,13 +64,18 @@ export class SearchComponent implements OnInit, AfterContentChecked {
   }
 
   search(): void {
+    this.loadingSearch = true;
     this.animeService.searchAnimeAndManga(this.typeControl.value, this.searchForm.value).subscribe(data => {
       switch (this.typeControl.value) {
         case 'anime':
+          this.resultManga = [];
           this.resultAnime = data;
+          this.loadingSearch = false;
           break;
         case 'manga':
+          this.resultAnime = [];
           this.resultManga = data;
+          this.loadingSearch = false;
           break;
         default:
           break;

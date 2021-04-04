@@ -1,0 +1,10 @@
+<div class="result">
+  <picture class="result-img">
+    <img [src]="manga.image_url" [alt]="manga.title">
+  </picture>
+  <div class="result-info">
+    <h3 class="title" [title]="manga.title">{{ manga.title }}</h3>
+    <p class="synopsis">{{ manga.synopsis }}</p>
+    <span class="episodes">Volumes: {{ manga.volumes }}</span>
+  </div>
+</div>
