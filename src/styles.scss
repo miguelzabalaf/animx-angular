@@ -50,6 +50,33 @@ body {
   animation: navigationFluid ease-in-out 0.5s;
 }
 
+select {
+  border: none;
+  outline: none;
+  background-color: var(--x-border);
+  border-radius: 5px;
+  color: var(--x-text);
+  option {
+    background-color: var(--x-black-transparent);
+    border-radius: 5px;
+  }
+}
+
+.btn-search {
+  border: none;
+  outline: none;
+  background-color: var(--x-primary);
+  color: var(--x-text);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:disabled {
+    background-color: var(--x-black-lite);
+    color: var(--x-text-muted);
+    cursor: no-drop;
+  }
+}
+
 @keyframes navigationFluid {
   from {
     opacity: 0;

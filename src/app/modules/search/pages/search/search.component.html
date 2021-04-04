@@ -8,5 +8,53 @@
     <p class="search__description">The Animx application was developed by Miguel Zabala Figueroa with learning
       intentions, the information presented in this search will be thanks to the public information provided by
       MyAnimeList. The use of filters is recommended for greater precision in the requested search.</p>
+
+    <br>
+
+    <form class="search__form" [formGroup]='searchForm'>
+      <div class="name">
+        <label for="name_input">Name</label>
+        <input id="name_input" type="text" autocomplete="off" class="search__form--input-text" formControlName="q">
+      </div>
+      <div class="type">
+        <label for="type_input">Type</label>
+        <select id="type_input" [formControl]="typeControl" class="search__form--input-select">
+          <option *ngFor="let type of getTypeValues()" [value]="type">{{ type | titlecase }}</option>
+        </select>
+      </div>
+      <div class="genre">
+        <label for="genre_input">Genre</label>
+        <select id="genre_input" formControlName="genre" class="search__form--input-select">
+          <option *ngFor="let genre of genres" [value]="genre.id">{{ genre.name }}</option>
+        </select>
+      </div>
+      <div class="status">
+        <label for="status_input">Status</label>
+        <select id="status_input" formControlName="status" class="search__form--input-select">
+          <option *ngFor="let item of getAiringValues()" [value]="item.value">{{ item.name }}
+          </option>
+        </select>
+      </div>
+      <button class="btn-search" [disabled]="validSearch()" (click)="search()">Search</button>
+    </form>
+
+    <!-- <pre>{{ searchForm.value | json }}</pre>
+    <pre>{{ typeControl.value | json }}</pre>
+    <pre>{{ searchForm.valid | json }}</pre> -->
+
+    <div class="search__results">
+      <div class="result" *ngFor="let item of resultAnime" [routerLink]="['/anime', item.mal_id]"
+        routerLinkActive="router-link-active">
+        <picture class="result-img">
+          <img [src]="item.image_url" [alt]="item.title">
+        </picture>
+        <div class="result-info">
+          <h3 class="title" [title]="item.title">{{ item.title }}</h3>
+          <p class="synopsis">{{ item.synopsis }}</p>
+          <span class="episodes">Episodes: {{ item.episodes }}</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
