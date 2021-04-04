@@ -8,5 +8,39 @@
     <p class="search__description">The Animx application was developed by Miguel Zabala Figueroa with learning
       intentions, the information presented in this search will be thanks to the public information provided by
       MyAnimeList. The use of filters is recommended for greater precision in the requested search.</p>
+
+    <br>
+
+    <form class="search__form" [formGroup]='searchForm'>
+      <div class="name">
+        <label for="name_input">Name</label>
+        <input id="name_input" type="text" class="search__form--input-text" formControlName="q">
+      </div>
+      <div class="type">
+        <label for="type_input">Type</label>
+        <select id="type_input" [formControl]="typeControl" class="search__form--input-select">
+          <option *ngFor="let type of getTypeValues()" [value]="type">{{ type | titlecase }}</option>
+        </select>
+      </div>
+      <div class="genre">
+        <label for="genre_input">Genre</label>
+        <select id="genre_input" formControlName="genre" class="search__form--input-select">
+          <option *ngFor="let genre of genres" [value]="genre.id">{{ genre.name }}</option>
+        </select>
+      </div>
+      <div class="status">
+        <label for="status_input">Status</label>
+        <select id="status_input" formControlName="status" class="search__form--input-select">
+          <option *ngFor="let item of getAiringValues()" [value]="item.value">{{ item.name }}
+          </option>
+        </select>
+      </div>
+      <button class="btn-search" [disabled]="validSearch()" (click)="search()">Search</button>
+    </form>
+
+    <pre>{{ searchForm.value | json }}</pre>
+    <pre>{{ typeControl.value | json }}</pre>
+    <pre>{{ searchForm.valid | json }}</pre>
+
   </div>
 </div>
