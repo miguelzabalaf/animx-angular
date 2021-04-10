@@ -18,17 +18,23 @@
     background-color: var(--x-black-lite);
     right: 0;
     left: 0;
-    // top: 40%;
+    overflow: auto;
     bottom: 0;
     z-index: 2;
-    padding: 10px 10px 75px;
+    padding: 0px 10px 75px;
+    height: calc(100% - 30%);
 
     .details-header {
       border-bottom: 1px solid var(--x-border);
-      padding-bottom: 10px;
+      padding: 10px 0;
       display: flex;
       flex: 1;
       justify-content: flex-end;
+      position: sticky;
+      background-color: var(--x-black-lite);
+      right: 0;
+      left: 0;
+      top: 0;
       &__close {
         width: 25px;
         height: 25px;
@@ -266,9 +272,12 @@
       border-radius: 5px;
       background-color: var(--x-black-lite);
       width: 700px;
-      height: auto;
+      height: calc(100% - 30%);
+      // height: auto;
+      overflow: auto;
       margin:  auto;
-      bottom: 15%;
+      bottom: 0;
+      top: 0;
     }
   }
 }
